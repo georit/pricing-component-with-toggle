@@ -75,6 +75,18 @@ body {
   margin: 0 1.5rem;
 }
 
+.switch:hover {
+  cursor: pointer;
+}
+
+.switch:hover .slider {
+  background: linear-gradient(
+    to right,
+    hsla(236, 72%, 79%, 0.4),
+    hsla(237, 63%, 64%, 0.6)
+  );
+}
+
 /* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
