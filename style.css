@@ -1,3 +1,212 @@
 /* *****Custom variables***** */
-/* **font** */
---
+:root {
+  /* ***font*** */
+  --font-family: "Montserrat", sans-serif;
+  /* ***colors*** */
+  /* **primary** */
+  --linear-gradient: linear-gradient(
+    to right,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  /* **neutral** */
+  --very-light-grayish-blue: hsl(240, 78%, 98%);
+  --light-grayish-blue: hsl(234, 14%, 74%);
+  --grayish-blue: hsl(233, 13%, 49%);
+  --dark-grayish-blue: hsl(232, 13%, 33%);
+}
+
+/* *****General styles***** */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("./images/bg-top.svg") 170% -5% no-repeat,
+    var(--very-light-grayish-blue);
+  background-size: 60%;
+  color: var(--grayish-blue);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+  font-size: 15px;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+/* *****Price container***** */
+.price-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  width: 90%;
+}
+
+.heading {
+  padding-bottom: 2rem;
+}
+
+.price-toggle {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.price-option {
+  color: var(--light-grayish-blue);
+  font-size: 0.8rem;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  margin: 0 1.5rem;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--linear-gradient);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 23px;
+  width: 23px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* ***plans*** */
+.plans {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.plan {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(105, 111, 221, 0.5);
+  margin: 1rem 0;
+  padding: 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.plan:nth-child(2) {
+  background: linear-gradient(
+    to bottom,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  color: #fff;
+}
+
+.plan-type {
+  padding-bottom: 0.5rem;
+}
+
+.price,
+.size,
+.users,
+.max-transfer-size {
+  padding: 0.8rem;
+  border-bottom: 1px solid hsla(234, 14%, 74%, 0.5);
+}
+
+.price {
+  color: var(--dark-grayish-blue);
+  font-size: 3rem;
+}
+
+.plan:nth-child(2) .price {
+  color: #fff;
+}
+
+.btn-learn-more {
+  width: 100%;
+  text-transform: uppercase;
+  font-family: inherit;
+  padding: 0.8rem 1rem;
+  margin-top: 1.5rem;
+  background: var(--linear-gradient);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-learn-more:hover {
+  background: transparent;
+  border: 1px solid hsl(237, 63%, 64%);
+  color: hsl(237, 63%, 64%);
+}
+
+.plan:nth-child(2) .btn-learn-more {
+  background: #fff;
+  border: 1px solid transparent;
+  color: hsl(237, 63%, 64%);
+}
+
+.plan:nth-child(2) .btn-learn-more:hover {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
