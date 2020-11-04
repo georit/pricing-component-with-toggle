@@ -185,6 +185,7 @@ input:checked + .slider:before {
 .price {
   color: var(--dark-grayish-blue);
   font-size: 3rem;
+  transition: all 2s ease-in;
 }
 
 .plan:nth-child(2) .price {
